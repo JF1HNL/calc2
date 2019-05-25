@@ -99,5 +99,8 @@ function keisan(){
     if(num_other_ary[i] === OTHRT_OBJECT.plus){
       display.textContent = + display.textContent + + num_other_ary[++i];
     }
+    if(num_other_ary[i] === OTHRT_OBJECT.div){
+      display.textContent = + display.textContent - + num_other_ary[++i];
+    }
   }
 }
