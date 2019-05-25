@@ -56,7 +56,7 @@ function keisan(){
   // 先に掛け算割り算をする
   const index = [];
   // 掛け算割り算の場所を抽出
-  for(let j = 0; j < ary.num.length; j++){
+  for(let j = 0; j < ary.num.length  - 1; j++){
     if(ary.other[j] === OTHRT_OBJECT.frac || ary.other[j] === OTHRT_OBJECT.times){
       index.push(j);
     }
