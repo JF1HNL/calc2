@@ -10,7 +10,7 @@ const OTHRT_OBJECT = {
   frac : "÷"
 }
 
-let before_button = "";
+const button_log = [];
 
 let display = document.querySelector("#display");
 display.textContent = 0;
@@ -23,7 +23,6 @@ const FLUG_OBJECT = {
 let next_num_other_flag = FLUG_OBJECT.num;
 
 function num_click(e){
-  before_button = e;
   if(next_num_other_flag === FLUG_OBJECT.num){
     ary.num.push(e);
   }else{
@@ -31,11 +30,12 @@ function num_click(e){
   }
   display.textContent = ary.num[ary.num.length - 1];
   next_num_other_flag = FLUG_OBJECT.other;
+  button_log.push(e);
 }
 
 function other_click(e){
   if(e === "="){
-    if(before_button === "="){
+    if(button_log[button_log.length - 1] === "="){
       ary.other.push(ary.other[ary.num.length - 2])
       ary.num.push(ary.num[ary.num.length - 1])
     }
@@ -48,7 +48,7 @@ function other_click(e){
     }
     next_num_other_flag = FLUG_OBJECT.num;
   }
-  before_button = e;
+  button_log.push(e);
 }
 
 function keisan(){
